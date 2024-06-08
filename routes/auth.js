@@ -80,7 +80,9 @@ router.post(
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET, {
       expiresIn: "1h",
     });
-    res.header("auth-token", token).json({ token });
+    res
+      .header("auth-token", token)
+      .json({ message: "Logueado con exito", token });
   }
 );
 
